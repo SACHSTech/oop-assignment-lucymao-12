@@ -1,18 +1,20 @@
+package oopAssignment;
+
 public class Avenger {
-    private String alias;
+    private String heroName;
     private String secretIdentity;
     private Boolean alive;
 
     public Avenger(String name, String superHero){
         secretIdentity = name;
-        alias = superHero;
+        heroName = superHero;
         alive = true;
     }
-    public String getAlias(){
-        return alias;
-    }
-    public String getSecretIdentity(){
+    public String getName(){
         return secretIdentity;
+    }
+    public String getHeroName(){
+        return heroName;
     }
     public Boolean isAlive(){
         return alive;

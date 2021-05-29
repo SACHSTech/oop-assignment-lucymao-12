@@ -1,3 +1,4 @@
+package oopAssignment;
 public class suit {
     private String colour;
     private int repulsorPower;
