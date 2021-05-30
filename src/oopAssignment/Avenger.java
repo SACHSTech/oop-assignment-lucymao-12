@@ -16,7 +16,10 @@ public class Avenger {
     public String getHeroName(){
         return heroName;
     }
-    public Boolean isAlive(){
+    public Boolean getAlive(){
         return alive;
+    }
+    public void setAlive(Boolean alv){
+        alive = alv;
     }
 }

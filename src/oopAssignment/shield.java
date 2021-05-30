@@ -3,37 +3,43 @@ import java.util.Random;
 
 public class shield {
     private String material;
-    private Boolean onCap;
     private int damagePercent;
     private Random random = new Random();
 
     public shield(String mat){
         this.material = mat;
-        this.onCap = true;
         this.damagePercent = 0;
     }
     public String getMaterial(){
         return material;
     }
-    public Boolean shieldOnCap(){
-        return onCap;
-    }
     public int getDamage(){
         return damagePercent;
     }
     public void thrown(){
-        onCap = false;
-        System.out.println("Captain America throws the shield!");
-        Boolean ranBool = random.nextBoolean();
-        if(ranBool){
-            onCap = false;
-            System.out.println("The shield hit the target!");
-            System.out.println(ranBool);
-            System.out.println("Damage: " + damagePercent);
-        }if(!ranBool){
-            damagePercent += 10;
-            System.out.println("The shield missed, Captain America was hit!");
-            System.out.println("Damage: " + damagePercent);
+        System.out.println("The shield is thrown!");
+        int randInt = random.nextInt(3);
+        if(randInt > 1){
+            if(!getMaterial().equalsIgnoreCase("vibranium")){
+                System.out.println("The shield hit the target!");
+                //System.out.println(randInt);
+                System.out.println("Damage: " + getDamage());
+            }else if(getMaterial().equalsIgnoreCase("vibranium")){
+                damagePercent += 10;
+                System.out.println("The shield missed, Ouch!");
+                System.out.println("Damage: " + getDamage());
+            }
+            
+        }if(randInt < 2){
+            if(getMaterial().equalsIgnoreCase("vibranium")){
+                System.out.println("The shield hit the target!");
+                //System.out.println(randInt);
+                System.out.println("Damage: " + getDamage());
+            }else if(!getMaterial().equalsIgnoreCase("vibranium")){
+                damagePercent += 10;
+                System.out.println("The shield missed, Ouch!");
+                System.out.println("Damage: " + getDamage());
+            }
         }
     }
 }

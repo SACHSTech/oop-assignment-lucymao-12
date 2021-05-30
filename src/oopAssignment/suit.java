@@ -11,4 +11,20 @@ public class suit {
         this.damagePercent = 0;
         this.markNum = mark;
     }
+    public String getColour(){
+        return colour;
+    }
+    public int getDamage(){
+        return damagePercent;
+    }
+    public int getMarkNum(){
+        return markNum;
+    }
+    public int getRepulsor(){
+        return repulsorPower;
+    }
+    public void suitUp(){
+        System.out.println("Mark " + getMarkNum() + " is ready with " + getRepulsor() + " % power.");
+        System.out.println("It's a gorgeous " + getColour() + ".");
+    }
 }

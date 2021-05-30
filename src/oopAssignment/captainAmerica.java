@@ -1,36 +1,46 @@
 package oopAssignment;
+import java.io.*;
 import oopAssignment.*;
 
 public class captainAmerica extends Avenger{
     private int yearsOutOfIce;
     private shield newShield;
-    private Boolean assemble;
 
     public captainAmerica(int ice, shield capShield, String secret, String hero){
         super(secret, hero);
         this.yearsOutOfIce = ice;
         this.newShield = capShield;
-        this.assemble = false;
     }
     public int getIce(){
         return yearsOutOfIce;
     }
-    public String avengersAssemble(){
-        assemble = true;
-        return "Avengers Assemble!";
-    }
-    public void fightReady(){
-        if(assemble && yearsOutOfIce > 0){
-            System.out.println("Captain America is ready to fight with the avengers!");
-        }
-        else if(yearsOutOfIce > 0){
-            System.out.println("Captain America is ready to fight!");
+    public Boolean fightReady(){
+        if(yearsOutOfIce > 0){
+            //System.out.println("Captain America is ready to fight!" + "\n");
+            return true;
         }
         else
-        System.out.println("He's still asleep!");
+        //System.out.println("He's still asleep!");
+        return false;
     }
-    public void fightDamage(){
-        newShield.thrown();
+    public void fightWin(String choice) throws IOException{
+        BufferedReader kReader = new BufferedReader(new InputStreamReader(System.in));
+        Boolean ready = this.fightReady();
+        while(ready == true && newShield.getDamage() < 100 && !choice.equalsIgnoreCase("Stop")){
+            newShield.thrown();
+            if(newShield.getDamage() >= 100){
+                super.setAlive(false);
+                System.out.println(this.getHeroName()+" is down!");
+    
+            }if(super.getAlive()){
+                System.out.println("What should he do next?");
+                choice = kReader.readLine();
+            }
+            
+            
+        }
+        
+        
     }
     
 }
