@@ -6,8 +6,8 @@ public class captainAmerica extends Avenger{
     private int yearsOutOfIce;
     private shield newShield;
 
-    public captainAmerica(int ice, shield capShield, String secret, String hero){
-        super(secret, hero);
+    public captainAmerica(int ice, shield capShield, String secret){
+        super(secret, "Captain America");
         this.yearsOutOfIce = ice;
         this.newShield = capShield;
     }
@@ -23,7 +23,7 @@ public class captainAmerica extends Avenger{
         //System.out.println("He's still asleep!");
         return false;
     }
-    public void fightWin(String choice) throws IOException{
+    public void fight(String choice) throws IOException{
         BufferedReader kReader = new BufferedReader(new InputStreamReader(System.in));
         Boolean ready = this.fightReady();
         while(ready == true && newShield.getDamage() < 100 && !choice.equalsIgnoreCase("Stop")){
@@ -35,13 +35,8 @@ public class captainAmerica extends Avenger{
             }if(super.getAlive()){
                 System.out.println("What should he do next?");
                 choice = kReader.readLine();
-            }
-            
-            
+            }   
         }
-        
-        
     }
-    
 }
 
