@@ -15,7 +15,7 @@ public class captainAmerica extends Avenger{
         return yearsOutOfIce;
     }
     public Boolean fightReady(){
-        if(yearsOutOfIce > 0){
+        if(yearsOutOfIce > 0 && getAlive()){
             //System.out.println("Captain America is ready to fight!" + "\n");
             return true;
         }

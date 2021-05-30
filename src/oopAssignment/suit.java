@@ -25,7 +25,7 @@ public class suit {
         return repulsorPower;
     }
     public void suitUp(){
-        System.out.println("Mark " + getMarkNum() + " is ready with " + getRepulsor() + " % power.");
+        System.out.println("Mark " + getMarkNum() + " is ready with " + getRepulsor() + "% power.");
         System.out.println("It's a gorgeous " + getColour() + ".");
     }
     public void suitBlast() throws IOException{
@@ -42,9 +42,18 @@ public class suit {
             }if(fireYes.equalsIgnoreCase("no")){
                 System.out.println("Recharge? (Yes/No)");
                 fireYes = kReader.readLine();
-                repulsorPower += 20;
-            }
-                
+                if(markNum > 10){
+                    repulsorPower += 20;
+                    System.out.println("Repulsor power: " + repulsorPower);
+                }
+                if(markNum <= 10){
+                    repulsorPower += 10;
+                    System.out.println("Repulsor power: " + repulsorPower);
+                }
+            } 
+            if(repulsorPower <= 0){
+                System.out.println("The repulsors are out of power!");
+            }    
         }
     }
 }

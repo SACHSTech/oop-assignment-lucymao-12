@@ -18,6 +18,10 @@ public class shield {
     }
     public void thrown(){
         System.out.println("The shield is thrown!");
+        /**
+         * 66% hit for vibranium, 33% hit for anything else
+         * any miss will deal 10 damage to shield 
+         */ 
         int randInt = random.nextInt(3);
         if(randInt > 1){
             if(!getMaterial().equalsIgnoreCase("vibranium")){
