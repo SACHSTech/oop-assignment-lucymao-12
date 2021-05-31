@@ -1,5 +1,6 @@
 package oopAssignment;
 import java.util.Random;
+import java.io.*;
 
 public class shield {
     private String material;
@@ -16,8 +17,10 @@ public class shield {
     public int getDamage(){
         return damagePercent;
     }
-    public void thrown(){
-        System.out.println("The shield is thrown!");
+    public void setDamage(int dmg){
+        damagePercent = dmg;
+    }
+    public void thrown() throws IOException{
         /**
          * 66% hit for vibranium, 33% hit for anything else
          * any miss will deal 10 damage to shield 
@@ -37,7 +40,6 @@ public class shield {
         }if(randInt < 2){
             if(getMaterial().equalsIgnoreCase("vibranium")){
                 System.out.println("The shield hit the target!");
-                //System.out.println(randInt);
                 System.out.println("Damage: " + getDamage());
             }else if(!getMaterial().equalsIgnoreCase("vibranium")){
                 damagePercent += 10;

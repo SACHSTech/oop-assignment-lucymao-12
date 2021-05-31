@@ -6,8 +6,8 @@ public class captainAmerica extends Avenger{
     private int yearsOutOfIce;
     private shield newShield;
 
-    public captainAmerica(int ice, shield capShield, String secret){
-        super(secret, "Captain America");
+    public captainAmerica(int ice, shield capShield, String secret, enemy newEnemy){
+        super(secret, "Captain America", newEnemy, 100);
         this.yearsOutOfIce = ice;
         this.newShield = capShield;
     }
@@ -23,20 +23,24 @@ public class captainAmerica extends Avenger{
         //System.out.println("He's still asleep!");
         return false;
     }
-    public void fight(String choice) throws IOException{
-        BufferedReader kReader = new BufferedReader(new InputStreamReader(System.in));
+    public void fight() throws IOException{
         Boolean ready = this.fightReady();
-        while(ready == true && newShield.getDamage() < 100 && !choice.equalsIgnoreCase("Stop")){
+        BufferedReader kReader = new BufferedReader(new InputStreamReader(System.in));
+        System.out.println("Throw the shield? (Yes/No)");
+        String choice = kReader.readLine();
+        while(ready == true && newShield.getDamage() < 100 && choice.equalsIgnoreCase("yes")){
             newShield.thrown();
-            if(newShield.getDamage() >= 100){
-                super.setAlive(false);
-                System.out.println(this.getHeroName()+" is down!");
-    
-            }if(super.getAlive()){
-                System.out.println("What should he do next?");
-                choice = kReader.readLine();
-            }   
+            System.out.println("Throw the shield? (Yes/No)");
+            choice = kReader.readLine();
+        }if(!ready){
+            System.out.println(getHeroName() + " is not ready!");
         }
+        if(newShield.getDamage() >= 100){
+            System.out.println(this.getHeroName()+"'s broken!");
+        }
+    }
+    public void Attacked(){
+
     }
 }
 
