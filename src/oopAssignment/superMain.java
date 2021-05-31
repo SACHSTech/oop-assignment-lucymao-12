@@ -24,15 +24,19 @@ public class superMain{
 
 
         //captainAmerica capAm = new captainAmerica(ice, new shield(shld), identity, new enemy(eHealth, bad, eAttack));
-        //captainAmerica capAm = new captainAmerica(0, new shield("wood"), "Cap", new enemy(100, "bad", 50));
+        //captainAmerica capAm = new captainAmerica(10, new shield("vibraniume"), "Cap", new enemy(20, "bad", 20));
         
-        ironMan irnman = new ironMan(new suit("Red", 10, 45), "Tony Stark", new enemy(50, "War Monger", 20));
+        ironMan irnman = new ironMan(new suit("Red", 40, 45), "Tony Stark", new enemy(50, "War Monger", 20));
 
         //System.out.println("Captain America spots an enemy!");
         //capAm.fight();
 
         System.out.println("Iron man spots an enemy");
         irnman.fight();
+
+
+        //System.out.println("List Iron Man description? (Yes/No)");
+
     }
 
 }

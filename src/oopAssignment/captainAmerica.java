@@ -28,13 +28,25 @@ public class captainAmerica extends Avenger{
         BufferedReader kReader = new BufferedReader(new InputStreamReader(System.in));
         System.out.println("Throw the shield? (Yes/No)");
         String choice = kReader.readLine();
-        while(ready && newShield.getHealth() > 0 && choice.equalsIgnoreCase("yes") && getEnemyHealth() > 0 && getAlive()){
-            if(newShield.thrown()){
+        Boolean hit = false;
+        
+        while(ready && newShield.getHealth() > 0 && !choice.equalsIgnoreCase("stop") && getEnemyHealth() > 0 && getAlive()){
+            if(choice.equalsIgnoreCase("yes")){
+                hit = newShield.thrown();
+            }
+            if(choice.equalsIgnoreCase("yes") && hit){
                 setEnemyHealth(getEnemyHealth()-10);
-                System.out.println("Enemy Health: " + getEnemyHealth());
+                System.out.println(getEnemyName()+ "'s Health: " + getEnemyHealth());
                 Attacked();
-            }else
+            }else if(choice.equalsIgnoreCase("no")){
+                System.out.println("Captain America attacks with his fist! (5 damage)");
+                setEnemyHealth(getEnemyHealth()-5);
+                System.out.println(getEnemyName()+ "'s Health: " + getEnemyHealth());
                 Attacked();
+            }else if(choice.equalsIgnoreCase("yes") && !hit){
+                System.out.println(getEnemyName()+ "'s Health: " + getEnemyHealth());
+                Attacked();
+            }
             if(getEnemyHealth() > 0 && newShield.getHealth() > 0 && getAlive()){
                 System.out.println("Throw the shield? (Yes/No)");
                 choice = kReader.readLine();
@@ -47,25 +59,23 @@ public class captainAmerica extends Avenger{
             Attacked();
         }
         */
-        if(getEnemyHealth() <= 0){
-            System.out.println("Enemy down!");
-        }
     }
     public void Attacked(){
         if(newShield.getHealth() <= 0 && getEnemyHealth() > 0 && getAlive()){
             System.out.println("Last stand! (Do 20 damage to enemy when shield breaks)");
             setEnemyHealth(getEnemyHealth()-2*(getEnemyAttack()));
-            System.out.println("Enemy Health: " + getEnemyHealth());
-            System.out.println("Enemy attack! (" + 2*getEnemyAttack() + " damage)");
+            System.out.println(getEnemyName()+ "'s Health: " + getEnemyHealth());
+            if(getEnemyHealth() <= 0){
+                System.out.println("Enemy down!");
+            }
             if(getEnemyHealth() > 0){
+                System.out.println(getEnemyName() + " is attacking (" + 2*getEnemyAttack() + " damage)");
                 setAlive(false);
-                System.out.println("Captain America has fallen.");
+                System.out.println("Without a shield, Captain America has fallen.");
                 setHealth(0);
             }
-            setHealth(getHealth()-20);
-            System.out.println("Health: "+this.getHealth());
-
-        }else if(getEnemyHealth() > 0 && getAlive()){
+        }
+        else if(getEnemyHealth() > 0 && getAlive()){
             System.out.println("Enemy attack! (" + getEnemyAttack() + " damage)");
             setHealth(this.getHealth()-getEnemyAttack());
             System.out.println("Health: "+this.getHealth());
@@ -75,7 +85,7 @@ public class captainAmerica extends Avenger{
         }
     }
     public void printCap(){
-        
+
     }
 }
 

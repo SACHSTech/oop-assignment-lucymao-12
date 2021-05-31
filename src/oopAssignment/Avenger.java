@@ -37,6 +37,9 @@ public abstract class Avenger {
     public void setEnemyHealth(int hp){
         newEnemy.setHealth(hp);
     }
+    public String getEnemyName(){
+        return newEnemy.getName();
+    }
     public int getHealth(){
         return health;
     }
