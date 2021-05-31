@@ -13,6 +13,9 @@ public class enemy {
     public int getHealth(){
         return health;
     }
+    public void setHealth(int hp){
+        health = hp;
+    }
     public String getName(){
         return name;
     }

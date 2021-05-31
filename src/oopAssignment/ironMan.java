@@ -2,9 +2,6 @@ package oopAssignment;
 import oopAssignment.*;
 import java.io.*;
 
-import javax.crypto.SecretKeyFactorySpi;
-
-
 public class ironMan extends Avenger{
     private Boolean fly;
     private suit nSuit;

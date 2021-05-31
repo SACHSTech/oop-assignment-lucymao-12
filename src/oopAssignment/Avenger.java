@@ -31,6 +31,12 @@ public abstract class Avenger {
     public int getEnemyAttack(){
         return newEnemy.getAttack();
     }
+    public int getEnemyHealth(){
+        return newEnemy.getHealth();
+    }
+    public void setEnemyHealth(int hp){
+        newEnemy.setHealth(hp);
+    }
     public int getHealth(){
         return health;
     }
