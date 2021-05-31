@@ -26,7 +26,7 @@ public class superMain{
         //captainAmerica capAm = new captainAmerica(ice, new shield(shld), identity, new enemy(eHealth, bad, eAttack));
         //captainAmerica capAm = new captainAmerica(0, new shield("wood"), "Cap", new enemy(100, "bad", 50));
         
-        ironMan irnman = new ironMan(new suit("Red", 100, 45), "Tony Stark", new enemy(50, "War Monger", 20));
+        ironMan irnman = new ironMan(new suit("Red", 10, 45), "Tony Stark", new enemy(50, "War Monger", 20));
 
         //System.out.println("Captain America spots an enemy!");
         //capAm.fight();

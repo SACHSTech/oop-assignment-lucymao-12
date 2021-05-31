@@ -27,9 +27,11 @@ public class suit {
         System.out.println("It's a gorgeous " + getColour() + ".");
     }
     public void suitBlast() throws IOException{
-        System.out.println("The repulsor fires off a blast!");
-        repulsorPower -= 10;
-        System.out.println("Repulsor power: " + repulsorPower);
+        if(repulsorPower > 0){
+            System.out.println("The repulsor fires off a blast! (" + repulsorPower/5 + " damage)");
+            repulsorPower -= 10;
+            System.out.println("Repulsor power: " + repulsorPower);
+        }
             //set enemy damage according to repulsor power
         if(repulsorPower <= 0){
             System.out.println("The repulsors are out of power!");

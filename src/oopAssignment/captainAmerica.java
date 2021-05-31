@@ -73,6 +73,8 @@ public class captainAmerica extends Avenger{
             setAlive(false);
             System.out.println("Captain America has fallen.");
         }
+    }
+    public void printCap(){
         
     }
 }
