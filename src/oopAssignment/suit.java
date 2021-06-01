@@ -28,7 +28,7 @@ public class suit {
     }
     public void suitBlast() throws IOException{
         if(repulsorPower > 0){
-            System.out.println("The repulsor fires off a blast! (" + repulsorPower/5 + " damage)");
+            System.out.println("The repulsor fires off a blast! (" + repulsorPower/4 + " damage)");
             repulsorPower -= 10;
             System.out.println("Repulsor power: " + repulsorPower);
         }
