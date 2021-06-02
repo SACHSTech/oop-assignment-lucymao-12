@@ -2,14 +2,16 @@ package oopAssignment;
 import java.io.*;
 import java.security.Identity;
 
-
+// the file to test and run all the classes
 public class superMain{
     public static void main(String[] args) throws IOException{
         BufferedReader kReader = new BufferedReader(new InputStreamReader(System.in));
         String run;
         //captainAmerica capAm = new captainAmerica(10, new shield("vibraniume"), "Cap", new enemy(20, "bad", 20));
         
-
+        /**
+         * asking users to input values for the constrcutor of captain america class
+         */
         System.out.println("Run Captain America simulation?");
         run = kReader.readLine();
         if(run.equalsIgnoreCase("yes")){
@@ -31,13 +33,22 @@ public class superMain{
             System.out.print("Attack: ");
             int eAttack = Integer.parseInt(kReader.readLine());
 
+            // new instance of captain america class
             captainAmerica capAm = new captainAmerica(ice, new shield(shld), identity, new enemy(eHealth, bad, eAttack));
+            
+            /**
+             * ask user if they would like to see the description of the captain america they created
+             * run the printCap method if yes
+             */
             System.out.println("List Captain America description? (Yes/No)");
             run = kReader.readLine();
             if(run.equalsIgnoreCase("yes")){
                 capAm.printCap();
             }
 
+            /**
+             * running the fight method if user inputs yes
+             */
             System.out.println("Run fight simulation? (Yes/No)");
             run = kReader.readLine();
             if(run.equalsIgnoreCase("yes")){
@@ -47,7 +58,9 @@ public class superMain{
             
         }
         
-
+        /**
+         * ask user for values for the iron man constructor
+         */
         System.out.println("Run Iron Man simulation?");
         run = kReader.readLine();
         if(run.equalsIgnoreCase("yes")){
@@ -71,14 +84,24 @@ public class superMain{
             System.out.print("Attack: ");
             int eAttack = Integer.parseInt(kReader.readLine());
             
-            
+            // new iron man class instance
             ironMan irnman = new ironMan(new suit(colour, power, mark), identity, new enemy(eHealth, bad, eAttack));
             //ironMan irnman = new ironMan(new suit("g", 10, 7), "i", new enemy(40, "bad", 30));
+            
+            /**
+             * ask user if they would like to see their description printed back
+             * run printShellHead method if yes
+             */
             System.out.println("List Iron Man description? (Yes/No)");
             run = kReader.readLine();
             if(run.equalsIgnoreCase("yes")){
                 irnman.printShellHead();
             }
+
+            /**
+             * ask user if they would like to run fight simulation
+             * run fight method if yes
+             */
             System.out.println("Run fight simulation? (Yes/No)");
             run = kReader.readLine();
             if(run.equalsIgnoreCase("yes")){

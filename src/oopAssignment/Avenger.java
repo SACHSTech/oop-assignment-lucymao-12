@@ -3,18 +3,23 @@ package oopAssignment;
 import java.io.IOException;
 
 public abstract class Avenger {
+    // set variables for class
     private String heroName;
     private String secretIdentity;
     private Boolean alive;
     private enemy newEnemy;
     private int health;
 
+    // constructor method
     public Avenger(String name, String superHero, enemy badGuy, int hlth){
         secretIdentity = name;
         heroName = superHero;
         newEnemy = badGuy;
         health = hlth;
+        // all avengers will being alive
         alive = true;
+    
+    // getter and setter methods
     }
     public String getName(){
         return secretIdentity;
@@ -46,6 +51,7 @@ public abstract class Avenger {
     public void setHealth(int hp){
         health = hp;
     }
+    // abstract methods
     public abstract void fight() throws IOException;
     public abstract void Attacked();
 }
