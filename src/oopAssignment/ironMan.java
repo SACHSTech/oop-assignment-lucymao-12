@@ -21,9 +21,13 @@ public class ironMan extends Avenger{
     }
     public Boolean getFly(){
         return fly;
+
+    // method to add new suit objects to a list
     }
     public void addSuit(suit newSuit){
         suits.add(newSuit);
+    
+    // method to print suit list to screen w/ their index values
     }
     public void printSuitList(){
         for(int i = 0; i < suits.size(); i++){
@@ -42,7 +46,9 @@ public class ironMan extends Avenger{
          */
         BufferedReader kReader = new BufferedReader(new InputStreamReader(System.in));
         String Rchoice = "";
-        // prints out suit details at beginning
+        /**
+         * print out suit list and ask user to choose based on index value
+         */
         System.out.println("Pick a suit");
         printSuitList();
         int suitNum = Integer.parseInt(kReader.readLine());
