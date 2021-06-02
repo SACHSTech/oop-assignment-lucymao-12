@@ -6,4 +6,5 @@
 *Insert Class Diagram here*  
 
 ## Summary
-*Include a brief summary that describes your system that your are modelling*
+My system models a fight between 2 avengers and their respectic "enemy" it allows the user to customize the characters and control a few of their decision within the "battle"
+

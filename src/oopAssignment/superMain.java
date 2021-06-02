@@ -85,9 +85,22 @@ public class superMain{
             int eAttack = Integer.parseInt(kReader.readLine());
             
             // new iron man class instance
-            ironMan irnman = new ironMan(new suit(colour, power, mark), identity, new enemy(eHealth, bad, eAttack));
+            ironMan irnman = new ironMan(identity, new enemy(eHealth, bad, eAttack));
             //ironMan irnman = new ironMan(new suit("g", 10, 7), "i", new enemy(40, "bad", 30));
             
+            /**
+             * user created suit added to suit list
+             */
+            suit nSuit = new suit(colour, power, mark);
+            irnman.addSuit(nSuit);
+            
+            /**
+             * populate list
+             */
+            suit mark50 = new suit("Gold", 100, 50);
+            irnman.addSuit(mark50);
+            suit mark1 = new suit("Grey", 60, 10);
+            irnman.addSuit(mark1);
             /**
              * ask user if they would like to see their description printed back
              * run printShellHead method if yes
@@ -95,7 +108,10 @@ public class superMain{
             System.out.println("List Iron Man description? (Yes/No)");
             run = kReader.readLine();
             if(run.equalsIgnoreCase("yes")){
-                irnman.printShellHead();
+                irnman.printSuitList();
+                System.out.println("Which suit do you want to see?");
+                int st = Integer.parseInt(kReader.readLine());
+                irnman.printShellHead(st);
             }
 
             /**

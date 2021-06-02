@@ -69,4 +69,7 @@ public class suit {
             System.out.println("Repulsor power: " + repulsorPower);
         }
     }
+    public String printSuit(){
+        return "a " + getColour() + " Mark " + getMarkNum() + " with " + getRepulsor() + "% power."; 
+    }
 }
